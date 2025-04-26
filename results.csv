@@ -1,0 +1,9 @@
+Dataset,Method,Accuracy
+ag_news,SVM,0.71
+ag_news,Random Forest,0.65
+ag_news,Decision Tree,0.43
+ag_news,K-Nearest Neighbors,0.75
+ag_news,Logistic Regression,0.71
+ag_news,Naive Bayes,0.67
+ag_news,Gradient Boosting,0.61
+ag_news,ICL,0.6
