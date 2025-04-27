@@ -38,7 +38,7 @@ class ContextualLearning:
 
             max_tries = 5
             err_counter = 0
-            print(prompt)
+            #print(prompt)
             while err_counter < max_tries:
                 try:
                     completion = self.client.chat.completions.create(
