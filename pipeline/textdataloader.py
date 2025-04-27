@@ -8,9 +8,9 @@ class TextDataLoader:
     def __init__(self, dataset_name='ag_news', split_ratio=0.2, random_state=42):
         """
         Args:
-            dataset_name (str): 支持 'ag_news', 'sst2', 'trec', 'boolq' 等
-            split_ratio (float): 测试集占比
-            random_state (int): 随机种子
+            dataset_name (str): 'ag_news', 'sst2', 'trec'
+            split_ratio (float)
+            random_state (int)
         """
         self.dataset_name = dataset_name
         self.split_ratio = split_ratio

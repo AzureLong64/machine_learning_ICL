@@ -10,7 +10,7 @@ import pandas as pd
 def main():
     # load client
     # default: deepseek
-    api_wrapper = APIClient(api_key="sk-db73e90e0b1e4281873826504cb085a4")
+    api_wrapper = APIClient(api_key="my_api")
     print("Loading llm...")
     client = api_wrapper.get_client()
     models = client.models.list()
