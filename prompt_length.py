@@ -11,7 +11,6 @@ from pipeline.client import APIClient
 from pipeline.contextual_learning import ContextualLearning
 
 def main():
-    # load client
     api_wrapper = APIClient(api_key="sk-4ac41f95e3414ca78790f1af126c02e4")
     print("Loading llm...")
     client = api_wrapper.get_client()
@@ -19,7 +18,6 @@ def main():
     print("Model loaded successfully:\n", models)
     print("============================================")
 
-    # default dataset
     dataset_name = "ag_news"  
     print(f"=== Running on dataset: {dataset_name} ===")
 
@@ -31,7 +29,6 @@ def main():
     print("=========================================================")
     print("Start to run contextual learning...")
 
-    # 训练参数
     start_train_samples = 5
     max_train_samples = 20
     step = 5

@@ -10,7 +10,6 @@ from openai import OpenAI
 
 
 def main():
-    # model lists
     model_names = [
         'Qwen/Qwen2-1.5B-Instruct',
         'Qwen/Qwen2-7B-Instruct',
@@ -22,7 +21,6 @@ def main():
     client = OpenAI(api_key=API_KEY, base_url="https://api.siliconflow.cn/v1")
     ds_client = OpenAI(api_key=ds_api, base_url="https://api.deepseek.com")
 
-    # 默认数据集
     dataset_name = "ag_news"
     print(f"======Running ICL comparison on dataset: {dataset_name}======")
 

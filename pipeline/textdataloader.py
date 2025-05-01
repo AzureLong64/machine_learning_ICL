@@ -37,11 +37,9 @@ class TextDataLoader:
         else:
             raise ValueError(f"Dataset {self.dataset_name} not supported!")
 
-        # Convert to list
         texts = list(texts)
         labels = list(labels)
 
-        # Randomly sample 500 examples if dataset is too large
         if len(texts) > 500:
             np.random.seed(self.random_state)
             indices = np.random.choice(len(texts), 500, replace=False)
