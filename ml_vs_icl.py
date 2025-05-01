@@ -10,7 +10,7 @@ import pandas as pd
 def main():
     # load client
     # default: deepseek
-    api_wrapper = APIClient(api_key="my_api")
+    api_wrapper = APIClient(api_key="sk-4ac41f95e3414ca78790f1af126c02e4")
     print("Loading llm...")
     client = api_wrapper.get_client()
     models = client.models.list()
@@ -32,9 +32,9 @@ def main():
             X_train, X_test, y_train, y_test = data_loader.split_data()
             X_train_for_icl, X_test_for_icl = X_train, X_test
         else:
-            data_loader = TextDataLoader(dataset_name, split_ratio=0.2, random_state=42)
-            X_train_raw, X_test_raw, y_train, y_test = data_loader.split_data()
-            X_train, X_test = data_loader.vectorize(X_train_raw, X_test_raw)
+            text_data_loader = TextDataLoader(dataset_name, split_ratio=0.2, random_state=42)
+            X_train_raw, X_test_raw, y_train, y_test = text_data_loader.split_data()
+            X_train, X_test = text_data_loader.vectorize(X_train_raw, X_test_raw)
             X_train_for_icl, X_test_for_icl = X_train_raw, X_test_raw
 
         print(f"Train data shape: {X_train.shape}")
@@ -48,7 +48,7 @@ def main():
 
         # Start contextual learning
         print("Start to run contextual learning...")
-        contextual_learning = ContextualLearning(X_train_for_icl, y_train, X_test_for_icl, y_test, client=client)
+        contextual_learning = ContextualLearning(X_train_for_icl, y_train, X_test_for_icl, y_test, client=client, model_name='deepseek-chat')
         icl_accuracy = contextual_learning.train()
         print("=========================================================")
 

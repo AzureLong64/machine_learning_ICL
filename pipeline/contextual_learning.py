@@ -1,18 +1,20 @@
-# contextual_learning.py
+# pipeline/contextual_learning.py
+
 import random
 import numpy as np
 from sklearn.metrics import accuracy_score
-from pipeline.client import OpenAI
 from tqdm import tqdm
 
 class ContextualLearning:
     def __init__(self, X_train, y_train, X_test, y_test, client=None, 
+                 model_name=None,
                  max_test_samples=20, max_train_samples=20):
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test
         self.y_test = y_test
         self.client = client 
+        self.model_name = model_name 
         self.max_test_samples = max_test_samples
         self.max_train_samples = max_train_samples
 
@@ -38,19 +40,16 @@ class ContextualLearning:
 
             max_tries = 5
             err_counter = 0
-            #print(prompt)
+
             while err_counter < max_tries:
                 try:
                     completion = self.client.chat.completions.create(
-                        model='deepseek-chat', 
+                        model=self.model_name,
                         messages=[{'role': 'user', 'content': prompt}],
                         temperature=0
                     )
                     response = completion.choices[0].message.content
                     pred = int(response.replace("#", ""))
-                    # print(pred)
-                    # print(self.y_test[n])
-
                     break
                 except Exception as e:
                     err_counter += 1

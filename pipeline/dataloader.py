@@ -2,9 +2,9 @@
 from sklearn.datasets import load_iris, load_digits, load_wine, load_breast_cancer
 
 class DataLoader:
-    def __init__(self, dataset_name="iris", test_size=0.2, random_state=42, stratify=True):
+    def __init__(self, dataset_name="iris", split_ratio=0.2, random_state=42, stratify=True):
         self.dataset_name = dataset_name
-        self.test_size = test_size
+        self.split_ratio = split_ratio
         self.random_state = random_state
         self.stratify = stratify
 
@@ -34,7 +34,7 @@ class DataLoader:
         stratify_param = self.y if self.stratify else None
         X_train, X_test, y_train, y_test = train_test_split(
             self.X, self.y,
-            test_size=self.test_size,
+            test_size=self.split_ratio,
             random_state=self.random_state,
             stratify=stratify_param
         )

@@ -1,4 +1,4 @@
-# pipeline/client/client.py
+# pipeline/client.py
 from openai import OpenAI
 
 class APIClient:
