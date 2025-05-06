@@ -1,4 +1,20 @@
 Dataset,Method,Accuracy
+iris,SVM,0.9666666666666667
+iris,Random Forest,0.9333333333333333
+iris,Decision Tree,0.9666666666666667
+iris,K-Nearest Neighbors,1.0
+iris,Logistic Regression,0.9666666666666667
+iris,Naive Bayes,0.9666666666666667
+iris,Gradient Boosting,0.9666666666666667
+iris,ICL,1.0
+wine,SVM,0.6944444444444444
+wine,Random Forest,1.0
+wine,Decision Tree,0.9722222222222222
+wine,K-Nearest Neighbors,0.8055555555555556
+wine,Logistic Regression,0.9444444444444444
+wine,Naive Bayes,0.9722222222222222
+wine,Gradient Boosting,0.9444444444444444
+wine,ICL,0.6666666666666666
 ag_news,SVM,0.71
 ag_news,Random Forest,0.65
 ag_news,Decision Tree,0.43
@@ -6,4 +22,12 @@ ag_news,K-Nearest Neighbors,0.75
 ag_news,Logistic Regression,0.71
 ag_news,Naive Bayes,0.67
 ag_news,Gradient Boosting,0.61
-ag_news,ICL,0.6
+ag_news,ICL,0.75
+sst2,SVM,0.56
+sst2,Random Forest,0.59
+sst2,Decision Tree,0.49
+sst2,K-Nearest Neighbors,0.56
+sst2,Logistic Regression,0.65
+sst2,Naive Bayes,0.52
+sst2,Gradient Boosting,0.62
+sst2,ICL,0.9

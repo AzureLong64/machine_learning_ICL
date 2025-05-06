@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from datasets import load_dataset
 
 class TextDataLoader:
-    def __init__(self, dataset_name='ag_news', split_ratio=0.2, random_state=42):
+    def __init__(self, dataset_name='ag_news', test_size=0.2, random_state=42):
         """
         Args:
             dataset_name (str): 'ag_news', 'sst2', 'trec'
@@ -13,7 +13,7 @@ class TextDataLoader:
             random_state (int)
         """
         self.dataset_name = dataset_name
-        self.split_ratio = split_ratio
+        self.test_size = test_size
         self.random_state = random_state
 
         self.load_data()
@@ -54,7 +54,7 @@ class TextDataLoader:
 
     def split_data(self):
         return train_test_split(
-            self.X, self.y, test_size=self.split_ratio, random_state=self.random_state, stratify=self.y
+            self.X, self.y, test_size=self.test_size, random_state=self.random_state, stratify=self.y
         )
 
     def get_all_data(self):

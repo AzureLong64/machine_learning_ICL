@@ -17,8 +17,8 @@ def main():
     print("============================================")
 
     # Define datasets
-    structured_datasets = ["iris", "digits", "wine"]
-    text_datasets = ["ag_news", "sst2", "trec"]
+    structured_datasets = ["iris", "wine"]
+    text_datasets = ["ag_news", "sst2"]
     datasets = structured_datasets + text_datasets
 
     results = []

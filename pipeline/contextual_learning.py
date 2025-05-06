@@ -8,7 +8,7 @@ from tqdm import tqdm
 class ContextualLearning:
     def __init__(self, X_train, y_train, X_test, y_test, client=None, 
                  model_name=None,
-                 max_test_samples=20, max_train_samples=20):
+                 max_test_samples=100, max_train_samples=50):
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test

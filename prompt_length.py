@@ -21,7 +21,7 @@ def main():
     dataset_name = "ag_news"  
     print(f"=== Running on dataset: {dataset_name} ===")
 
-    data_loader = TextDataLoader(dataset_name, split_ratio=0.2, random_state=42)
+    data_loader = TextDataLoader(dataset_name, test_size=0.2, random_state=42)
     X_train, X_test, y_train, y_test = data_loader.split_data()
 
     print(f"Train data shape: {X_train.shape}")
@@ -30,7 +30,7 @@ def main():
     print("Start to run contextual learning...")
 
     start_train_samples = 5
-    max_train_samples = 20
+    max_train_samples = 50
     step = 5
 
     train_samples_list = []
